@@ -1,0 +1,47 @@
+{% extends "HomePage/base.html" %}
+
+{% load static %}
+
+{% block headerJS %}
+
+<link rel="stylesheet" href="{% static 'HomePage/index.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<div class="home-container">
+  <div class="home-content">
+    <h1>Welcome to TMWA</h1>
+    <div class="home-descr">
+      <p>
+        This is a web-based tool for monitoring
+        the status of the AMS-02 silicon tracker
+        in many different ways. It features:
+      </p>
+      <ul>
+        <li>
+          A Long-term monitoring app, where
+          data from the tracker calibrations
+          can be plotted as a function of time,
+          on a per-TDR basis, for both X and Y
+          sides.
+        </li>
+        <li>
+          A Real-time monitoring app, which
+          is basically a web-port of tkonline
+          where the last calibration can be
+          displayed and controlled.
+        </li>
+      </ul>
+      <p>
+        Use the navigation bar at the top to select
+        between one of the two monitors.
+      </p>
+    </div>
+    <p class="content-footer">
+      Please report any bug you encounter to the
+      addresses in the 'Contacts' section.
+    </p>
+  </div>
+</div>
+{% endblock %}

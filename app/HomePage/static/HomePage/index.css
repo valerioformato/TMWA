@@ -1,0 +1,55 @@
+.home-container{
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background: url('body-trk.jpg') no-repeat;
+  background-position: center 0;
+  background-size: cover;
+  overflow: scroll;
+  /*-webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;*/
+}
+
+.home-content{
+  font-size: 48px;
+  width: 60%;
+  padding: 1.5em 0;
+  margin: 60px auto 0 auto;
+  vertical-align: middle;
+  color: #FFFFFF;
+  border-radius: 20px;
+  border: #FFFFFF 4px solid;
+  background-color: rgba(0, 0, 0, 0.65);
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+.home-content h1{
+  padding: 0 0 1.5em 0;
+  font-size: 48px;
+}
+
+.home-descr{
+  width: 80%;
+  margin: 0 auto;
+  border-top: #FFFFFF 4px solid;
+  border-bottom: #FFFFFF 4px solid;
+  font-size: large;
+  text-align: justify;
+  padding: 0.6em 0;
+}
+
+.home-descr li{
+  margin: 0.5em 0 0.5em 1.5em;
+}
+
+.content-footer{
+  font-size: small;
+  text-align: right;
+  color: Yellow;
+  width: 80%;
+  margin: 0 auto;
+
+}

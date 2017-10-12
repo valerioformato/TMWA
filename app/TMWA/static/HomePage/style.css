@@ -1,0 +1,149 @@
+* {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+
+  /* TO BE REMOVED: show borders for debug */
+  /*border: 1px solid rgba(0, 0, 0, 0.3);*/
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*
+Add a wrapper with some padding allows for
+the remainder of the body to take all available
+space
+*/
+.wrapper{
+  padding: 100px 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.homepage.header {
+  height: 100px;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: #66a3ff;
+  margin: 0 0 0 0;
+  padding: 10px 0 10px 10px;
+  background: url('header-iss.jpg') no-repeat;
+  background-position: center 45%;
+  background-size: cover;
+
+  /*Hack to vertically align content*/
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  /*Shift against wrapper padding*/
+  margin-top: -100px;
+}
+
+.headertext {
+  /*Hack to vertically align content*/
+  position: relative;
+  top: 100%;
+  transform: translateY(-100%);
+}
+
+.headertext h1 {
+  color: #FFFFFF;
+  font-size: 48px;
+  font-weight: bold;
+  margin: auto 0 auto 0;
+}
+
+.headertext h3 {
+  color: #FFFFFF;
+  margin: auto 0 auto 0;
+}
+
+.homepage.navbar{
+  text-align: center;
+  padding: 8px 8px;
+  position: relative;
+  background-color: #f0feff;
+  border-width: 2px 0;
+  border-color: #0000b3;
+  border-style: solid;
+}
+
+.homepage.navbar a{
+  box-sizing: border-box;
+  background: #cce6ff;
+  height: 100%;
+  width: 20%;
+  font-family: 'Roboto', sans-serif;
+  font-size: medium;
+  display: inline-block;
+  margin: auto;
+  line-height: 40px;
+  border-radius: 10px;
+  border-width: 2px;
+  text-decoration: none;
+  color: #004f99;
+}
+
+.homepage.navbar a:hover{
+  background: #FFFFFF;
+  border-color: #004f99;
+  border-style: solid;
+}
+
+#selected{
+  background: #004f99;
+  border-color: #FFFFFF;
+  border-style: solid;
+  color: White;
+}
+
+.contactscontainer {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  /*background: #f0feff;
+  background: linear-gradient(to bottom, #f0feff, #FFFFFF);*/
+}
+
+.contacts {
+  position: relative;
+  border: 2px black solid;
+}
+
+.devcontainer {
+  width: 60%;
+  text-align: center;
+  margin: auto;
+}
+
+.devcontainer.developer {
+  width: 100%;
+  border-radius: 5px;
+  text-align: left;
+  margin: 0.5em 0;
+  padding: 0.2em;
+}
+
+.contacts:before {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://naked-science.ru/sites/default/files/styles/full_size/public/field/image/computer-programming_0.jpeg?itok=B6gVFFyy");
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.devcontainer.developer ul{
+  list-style-type: none;
+  margin: 0.2em 1em;
+  z-index: 2;
+}

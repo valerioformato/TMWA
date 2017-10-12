@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Set page title -->
+  <title>TMWA</title>
+
+  <!-- Load font from Google font API -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+
+  <link rel="stylesheet" type="text/css" href="{% static 'HomePage/style.css' %}" />
+
+  {% block headerJS %} {% endblock %}
+
+</head>
+<body>
+  <div class="wrapper">
+    <div class="homepage header">
+      <div class="headertext">
+        <h1>TMWA</h1>
+        <h3>Tracker Monitoring WebApp</h3>
+      </div>
+    </div>
+    <div class="homepage navbar">
+      <ul>
+        {% for button in headerButtons %}
+        {% if button.selected %}
+        <a id="selected" href="{{ button.link }}">{{ button.name }}</a>
+        {% else %}
+        <a href="{{ button.link }}">{{ button.name }}</a>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    {% block content %} {% endblock %}
+  </div>
+</body>
+</html>
