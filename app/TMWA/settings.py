@@ -26,7 +26,8 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['marvin-laptop', 'localhost', '127.0.0.1']
+#ALLOWED_HOSTS = ['marvin-laptop', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['10.2.201.110']
 
 
 # Application definition
@@ -129,6 +130,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 ROOTFILES = os.environ['DBROOTFILES']
 
+REDIS_HOST = os.environ['REDIS_HOST']
+REDIS_URL = "redis://{}:6379".format(REDIS_HOST)
 
 # Celery settings
 RABBIT_HOST   = os.environ['RABBIT_HOST']
@@ -138,14 +141,13 @@ BROKER_URL = 'amqp://{}:{}@{}/tmwa_rabbit'.format(RABBITMQ_USER, RABBITMQ_PASS, 
 print RABBIT_HOST, RABBITMQ_PASS, BROKER_URL
 
 #BROKER_URL = 'amqp://guest:{}@{}//'.format(RABBITMQ_PASS, RABBIT_HOST)
-CELERY_RESULT_BACKEND = 'db+sqlite:///{}/results.db'.format(BASE_DIR)
+CELERY_BROKER_URL = 'amqp://{}:{}@{}/tmwa_rabbit'.format(RABBITMQ_USER, RABBITMQ_PASS, RABBIT_HOST)
+print RABBIT_HOST, RABBITMQ_PASS, BROKER_URL
+CELERY_RESULT_BACKEND = REDIS_URL
+#CELERY_RESULT_BACKEND = 'db+sqlite:///{}/results.db'.format(BASE_DIR)
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
-
-# channels settings
-REDIS_HOST = os.environ['REDIS_HOST']
-REDIS_URL = "redis://{}:6379".format(REDIS_HOST)
 
 CHANNEL_LAYERS = {
     "default": {

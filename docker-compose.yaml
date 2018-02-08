@@ -31,7 +31,7 @@ services:
     volumes:
       - ./app:/opt/myproject
       - static:/opt/myproject/static
-      - /Volumes/AMS_Disk/TrackerMonitoring/Data/:/Data/CalFiles
+      - /mnt/Data/TkMonitor/:/Data/CalFiles
 
   worker:
     image: "tmwa:latest"
@@ -61,7 +61,7 @@ services:
       - rabbitmq:rabbit
     volumes:
       - ./app:/opt/myproject
-      - /Volumes/AMS_Disk/TrackerMonitoring/Data/:/Data/CalFiles
+      - /mnt/Data/TkMonitor/:/Data/CalFiles
 
   celery_worker:
     image: "tmwa:latest"
@@ -92,7 +92,7 @@ services:
       - rabbitmq:rabbit
     volumes:
       - ./app:/opt/myproject
-      - /Volumes/AMS_Disk/TrackerMonitoring/Data/:/Data/CalFiles
+      - /mnt/Data/TkMonitor/:/Data/CalFiles
 
   # nginx:
   #   build: ./nginx

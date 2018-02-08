@@ -10,7 +10,7 @@ app = Celery('celeryapp',
     backend='rpc://')
 
 # This reads, e.g., CELERY_ACCEPT_CONTENT = ['json'] from settings.py:
-app.config_from_object('django.conf:settings')
+app.config_from_object('django.conf:settings', namespace='CELERY')
 
 # For autodiscover_tasks to work, you must define your tasks in a file called 'tasks.py'.
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
